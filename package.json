@@ -1,6 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "watchkey",
+  "version": "1.0.0",
   "title": "Watchkey",
   "description": "Store and retrieve keychain secrets with Touch ID & Apple Watch",
   "icon": "extension-icon.png",
