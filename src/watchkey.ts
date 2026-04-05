@@ -6,13 +6,9 @@ import { join } from "node:path";
 const IS_WINDOWS = platform() === "win32";
 
 function resolveWatchkeyPath(): string | null {
-  const localAppData =
-    process.env.LOCALAPPDATA || (IS_WINDOWS ? join(homedir(), "AppData", "Local") : "");
+  const localAppData = process.env.LOCALAPPDATA || (IS_WINDOWS ? join(homedir(), "AppData", "Local") : "");
   const candidates = IS_WINDOWS
-    ? [
-        join(localAppData, "watchkey", "watchkey.exe"),
-        join(process.env.PROGRAMFILES || "", "watchkey", "watchkey.exe"),
-      ]
+    ? [join(localAppData, "watchkey", "watchkey.exe"), join(process.env.PROGRAMFILES || "", "watchkey", "watchkey.exe")]
     : ["/usr/local/bin/watchkey", "/opt/homebrew/bin/watchkey"];
 
   for (const p of candidates) {

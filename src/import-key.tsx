@@ -14,7 +14,9 @@ export default function ImportKey() {
   useUpdateCheck();
 
   if (platform() === "win32") {
-    return <Detail markdown="# Not Available\n\nImport Key is only available on macOS. It imports existing macOS Keychain items into watchkey." />;
+    return (
+      <Detail markdown="# Not Available\n\nImport Key is only available on macOS. It imports existing macOS Keychain items into watchkey." />
+    );
   }
 
   const { handleSubmit, itemProps } = useForm<FormValues>({
