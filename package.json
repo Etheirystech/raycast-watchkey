@@ -2,11 +2,12 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "watchkey",
   "title": "Watchkey",
-  "description": "Store and retrieve keychain secrets with Touch ID & Apple Watch",
+  "description": "Store and retrieve secrets with biometric authentication (Touch ID, Apple Watch, or Windows Hello)",
   "icon": "extension-icon.png",
   "author": "etheirystech",
   "platforms": [
-    "macOS"
+    "macOS",
+    "windows"
   ],
   "categories": [
     "Developer Tools",
