@@ -122,7 +122,8 @@ const WATCHKEY_REPO = IS_WINDOWS ? "Etheirystech/watchkey-win" : "Etheirystech/w
 async function getInstalledVersion(): Promise<string | null> {
   try {
     const output = await execPromise(WATCHKEY_PATH!, ["--version"]);
-    return output.trim();
+    const match = output.trim().match(/[\d]+\.[\d]+\.[\d]+(?:[.\-\w]+)?/);
+    return match ? match[0] : output.trim();
   } catch {
     return null;
   }

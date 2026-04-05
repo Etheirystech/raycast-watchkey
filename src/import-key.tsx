@@ -10,12 +10,12 @@ interface FormValues {
 }
 
 export default function ImportKey() {
+  const { installed, installView } = useInstallGuard();
+  useUpdateCheck();
+
   if (platform() === "win32") {
     return <Detail markdown="# Not Available\n\nImport Key is only available on macOS. It imports existing macOS Keychain items into watchkey." />;
   }
-
-  const { installed, installView } = useInstallGuard();
-  useUpdateCheck();
 
   const { handleSubmit, itemProps } = useForm<FormValues>({
     onSubmit: async (values) => {
